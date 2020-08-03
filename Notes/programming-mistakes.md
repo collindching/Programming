@@ -1,13 +1,17 @@
 # Tips to program more effectively as a data scientist
 
+Write out remainder
+Add examples, pictures, diagrams to explain advice.
+
 ## Lessons I learned the hard way my first software project 
 
 Recently, I developed code to automate a mission-critical, but time-intensive, task in R. The end result was successful, but the journey to that result was fraught with painful and stress-inducing debug cycles as the code grew in complexity. 
 
 While I did some things well, in particular
 
-- Documenting code by using expressive variable and function names, and leaving comments
-- Writing modular code by giving each function a clear and focused use case
+- Documented code well: Via meaningful variable and function names, and writing short explanatory comments
+- Writing modular code: Gave each function a clear, focused use case
+- Achieved the final goal: At the end of the day, managed to get the necessary output
 
 I could have developed my code more effectively in an number of ways. Here is some practical programming advice, so that you don't experience the same mistakes I made. 
 
@@ -28,39 +32,32 @@ Pay careful attention to the logic of your data manipulations. For complex data 
 
 ### Investing in a clear file organization
 
-As you write code across several scripts and validate with dozens of Excel files, it will become increasingly challenging. 
+During my project, I severely underestimated the number of files that I would be managing. So as I used more scripts and Excel files, each named and organized loosely according to ad-hoc rules, locating files that I needed became a huge headache. 
 
-- Many files
-- Result in scrolling and wasted mental effort trying to find files
-- Containing messiness will reduce cognitive load and stress
-- Have a consistent, predefined file structure
-- Must-haves
-    - Folder for the project
-    - Naming convention for code
-    - Naming convention for data
-- Options
-    - Use versions (ie _v1, _v2)
-    - Include dates - YYYY_MM_DD
+If I had simply invested upfront in maintaining a folder hierarchy and following a consistent file naming convention, I would have saved many crucial minutes scrolling through folders to pinpoint files. More importantly, I'd reduce my cognitive load and stress, and have a neat record of all the work I'd previously done.
 
+My suggestion: before starting your project, predefine organization and naming rules for your file structure, rather than coming up with logic on the fly. This will allow you to be as consistent as possible, and limit the amount of cognitive load you have to manage as you get more and more files. 
 
-### Not designing code to make it easy to check your data at each step
-
-- Ties into idea of creating modular code
-- Each time your data is processed, you want be able to get outputs
-
+Some must-haves for file organization, are having a folder for the project, a naming convention for the code, and a naming convention for your data files. For all file types, I recommend adding a date suffix for each file (ie `file_name_2020_08_03`). The advantage is keeping a chronological record of all the files you've used. If you create multiple versions of the same file in one day, use versioning prefixes (ie `v2_file_name_2020_08_03`).
 
 ### Check data inputs and outputs automatically at each step of your code
 
-- This should be done automatically as much as possible
-- I spent a lot of time exporting to Excel, building pivots
-- Write code that makes it quick once, investing time and mental effor here pays itself back tenfold
+Debugging was by far the most painful part of my software project, especially because I was passing multipel different formats of the same data between different functions. 
+
+To catch unexpected behavior more quickly, and be able to do quick on-the-spot validation of my code, it's best to allow your code to get outputs of your resulting data at each processing step. 
+
+Unit testing works, or you can simply output a summary of results at each stage, which you can use to compare against known numbers. WIth this strategy, you can quickly see if any data is getting lost or corrupted, and at which data data processing step that it's occurring 
+at. 
+
+This should be as automated as possible, and you should limit the number of repeated manual operations you run during validation. If you see yourself repeating the same work over and over, you should plan how to automate that process -- either within your code, or via an Excel template. Time invested in automation pays itself back tenfold, likely even more. 
 
 ### Keep a solutions log
 
-- Keep details of solution so you don't have to debug the same problem twice
-- Keep track of each error you face, perhaps in an Excel 
-- Suggestion: date of problem, description or error code, solution
+The same bugs will often pop up in your code, and to avoid researching the same issues over and over again, I recommend tracking the solutions you've used.
 
+By keeping the details of previously used solutions, you keep a growing log of issues that keeps you from repeating efforts with stuff. 
+
+My suggestion is to keep track of each error you face in a Google sheet, and keep it simple. Include the date of the problem, your error code and where it occurred, and the solution that you ended up using. 
 
 ### Document changes made to your code
 
@@ -69,13 +66,15 @@ As you write code across several scripts and validate with dozens of Excel files
 - Suggestion
     - Keep this in an Excel log
 
-### Being methodical and composed while debugging
+### Debug systematically
 
-- Often would step through the entire code
-- Approach debugging a clear mind
-- Suggestion
+- Following intuition can give you good results, but is an expensive strategy in the long-run 
+- Better to have a systematic and methodical approach
+- Suggested approach
     - Build context: If there is an error message, invest in understanding it
         - Check that form of inputs are correct, going into problem module 
     - Reduce search space: Isolate out modules in which error is occurring
         - Reduces stress
-    - Know what the problem actually is
+    - Record hypotheses, test, and record
+        - Some initial ideas -- check for unexpected inputs, mismatched data types, or null values
+    - Fix and re-run
