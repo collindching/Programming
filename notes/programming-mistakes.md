@@ -1,4 +1,4 @@
-# Guidelines to program more effectively as a data scientist
+# How to program and debug more effectively as a data scientist
 
 ## Lessons from my first data science software project
 
@@ -46,13 +46,13 @@ A couple basic checks that I regularly used:
 
 To increase efficiency and repeat keystrokes, I would think about ways to automate validation, either through by creating simple validation functions or Excel templates. For me, time invested in automating validation easily paid itself off tenfold.
 
-### 4. Debug calmly and methodically 
+### 4. Debug methodically 
 
-Sometimes it pays off to debug by following your intuition, though this approach worked for me with mixed success. 
+When errors arise, debugging by following your instincts can sometimes pay off. But without a plan, this approach can be arbitrary and frustrating. In the long-term, following a methodical debugging procedure is a more effective strategy. 
 
-There were several occasions when my hunches failed me, leaving me guessing and testing hypotheses at random to hopefully arrive at a solution. This is debug purgatory, and it is stressful. 
+Building a system in which you narrow down sources of error and document attempted solutions can help you more effectively circle in on a solution. Moreover, this keeps stress at bay, allowing you to focus on debugging with an organized and calm mind.
 
-While following intuition can give you good results, following a methodical debug procedure is a more effective long-run strategy. Being methodical helps to reduce stress and narrow down the list of possible bug sources. The procedure that I've been using is: 
+At a high-level, I think a system should involve understanding the error message, developing context around the bug, and testing and documenting solutions in an organized fashion. In this system, you get more control over your debugging process, a reference document for future debugging cycles, and significant reduction in stress in exchange for a small additional investment in time and effort. The procedure that I've been using is:  
 
 1. If there is an error message, read it carefully and look it up; if not, describe the unexpected behavior in writing
 2. Narrow down the location of the offending code by inserting manual tests
@@ -61,9 +61,18 @@ While following intuition can give you good results, following a methodical debu
 5. If the error persists, research the error further and test again
 6. If the error persists, ask for debugging help 
 
-Whatever method you choose for yourself, the key in my opinion is to debug calmly and methodically. 
+While your system might be different, I think the core principles will be the same: understand your error, locate the bug, investigate obvious sources of error, and test and document.
 
-### 5. Keep track of your solutions
+### 5. Record your solutions 
+
+- Had to repeat
+- I have had to debug same error twice
+- Avoid debugging the same error twice 
+- If you have ever debugge Have you ever debugged the same problem
+- Solutions reference = greater efficiency
+- Suggestion: track all errors in a Google sheet
+
+This was important enough that I want to reiterate it as its own point. Keeping a growing list of solutions lets you be more efficient moving forward.
 
 The same bugs will often pop up in your code, and to avoid researching the same issues over and over again, I recommend tracking the solutions you've used.
 
