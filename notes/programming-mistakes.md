@@ -63,21 +63,25 @@ At a high-level, I think a system should involve understanding the error message
 
 While your system might be different, I think the core principles will be the same: understand your error, locate the bug, investigate obvious sources of error, and test and document.
 
-### 5. Record your solutions 
+### 5. Document bugs and solutions
 
-- Had to repeat
-- I have had to debug same error twice
-- Avoid debugging the same error twice 
-- If you have ever debugge Have you ever debugged the same problem
-- Solutions reference = greater efficiency
-- Suggestion: track all errors in a Google sheet
+In the course of my project, I caught myself debugging the same problem several times, which was an inefficient use of time. 
 
-This was important enough that I want to reiterate it as its own point. Keeping a growing list of solutions lets you be more efficient moving forward.
+To avoid solving the same problem twice, I started maintaining a document of bugs that I ran into, along with their solutions. This reference also has a preventative benefit, allowing me to keep track of common bugs and avoid making those mistakes in the first place.
 
-The same bugs will often pop up in your code, and to avoid researching the same issues over and over again, I recommend tracking the solutions you've used.
+I suggest keeping your solution document simple; you can keep track of each error you face in a spreadsheet -- mine only has four columns: error, conetxt, solution, and notes for next time. 
 
-By keeping the details of previously used solutions, you keep a growing log of issues that keeps you from repeating efforts with stuff. 
 
-My suggestion is to keep track of each error you face in a Google sheet, and keep it simple. Include the date of the problem, your error code and where it occurred, and the solution that you ended up using. 
+---
+
+I've learned a lot of lessons the hard way in the course of this project, and hope that this post can save you some stress and time in your next software endeavor. Let me know your thoughts in the comments below, and feel free to connect with me on Twitter.
+
+
+
+
+
+
+
+
 
 
